@@ -53,10 +53,14 @@ public class Config {
     }
 
     private List<String> colorList(List<String> text) {
-        return text.stream()
+        List<String> result = text.stream()
                 .filter(Objects::nonNull)
                 .map(s -> ChatColor.translateAlternateColorCodes('&', s))
                 .collect(Collectors.toList());
+        if (result.isEmpty()) {
+            result.add("");
+        }
+        return result;
     }
 
     public boolean isEnabled() {
