@@ -4,6 +4,7 @@ enabled: true
 # 死亡后给予的药水效果
 potion-effect:
   # 可以在这里添加上你要的药水效果，大小写都可以，不给药水效果的话不要留空，改成type: []
+  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
   type:
     - BLINDNESS
     - NAUSEA
