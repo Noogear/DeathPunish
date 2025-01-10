@@ -1,0 +1,15 @@
+name: deathPunish
+version: '1.0'
+main: cn.deathPunish.Main
+api-version: '1.21'
+
+commands:
+  deathpunish:
+    description: Main command.
+    aliases:
+      - dp
+    usage: /<command>
+permissions:
+  deathpunish.reload:
+    description: Allow the sender to reload the plugin.
+    default: op
