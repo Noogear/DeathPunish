@@ -18,7 +18,7 @@ public final class Main extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
             isListening = true;
         }
-        Objects.requireNonNull(getCommand("notarget")).setExecutor(new Commands(this));
+        Objects.requireNonNull(getCommand("deathpunish")).setExecutor(new Commands(this));
 
     }
 
