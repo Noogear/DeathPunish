@@ -4,17 +4,21 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class Main extends JavaPlugin {
     private Config config;
-    private boolean isListening;
+    private boolean isListening = false;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         config = new Config(this);
-        Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
-        isListening = true;
-        getCommand("notarget").setExecutor(new Commands(this));
+        if (config.isEnabled()) {
+            Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
+            isListening = true;
+        }
+        Objects.requireNonNull(getCommand("notarget")).setExecutor(new Commands(this));
 
     }
 
