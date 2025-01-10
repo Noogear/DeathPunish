@@ -55,7 +55,7 @@ public class Listeners implements Listener {
 
         if (config.isKeepFoodLevel()) {
             Integer food = foodLevel.getOrDefault(player.getUniqueId(), 20);
-            if (food != 20) {
+            if (food < 20) {
                 player.setFoodLevel(food);
             }
         }
